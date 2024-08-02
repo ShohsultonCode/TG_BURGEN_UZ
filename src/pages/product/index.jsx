@@ -25,7 +25,7 @@ const Index = () => {
         }
 
         const productIds = selectedProducts.map(item => item.productId);
-        const response = await fetch('https://botproject.uz/api/products/ask', {
+        const response = await fetch('http://localhost:7002/api/products/ask', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ const Index = () => {
         order_count: productCounts[product._id]
       }));
 
-      const response = await fetch('https://botproject.uz/api/orders/create', {
+      const response = await fetch('http://localhost:7002/api/orders/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -150,7 +150,7 @@ const Index = () => {
               <td>{product.product_name}</td>
               <td>
                 <img
-                  src={`https://botproject.uz/api/images/${product.product_image}`}
+                  src={`http://localhost:7002/api/images/${product.product_image}`}
                   className="img-fluid"
                   alt={product.product_name}
                   style={{ height: "100px", width: "100px", objectFit: "cover" }}
